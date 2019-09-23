@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+
+import time
+
+print("Good Morning")
+time.sleep(5)
+print("Good Afternoon")
+print("current date and time is ",time.ctime())
