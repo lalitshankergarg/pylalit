@@ -1,0 +1,133 @@
+
+CSR1000v_Lalit#term len 0 
+CSR1000v_Lalit#show run 
+Building configuration...
+
+Current configuration : 1064 bytes
+!
+! Last configuration change at 06:53:52 UTC Tue Sep 24 2019
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console auto
+!
+hostname CSR1000v_Lalit
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$pt0Z$W9DmXsoRDwH2Dsi7j6udB0
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+no ip domain lookup
+ip domain name garg.com
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 969XTKMO5MS
+spanning-tree extend system-id
+!
+username lalit privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface GigabitEthernet1
+ ip address dhcp
+ negotiation auto
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 8
+ login local
+ transport input ssh
+!
+!
+end
+
+CSR1000v_Lalit#
