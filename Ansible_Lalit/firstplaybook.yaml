@@ -1,0 +1,30 @@
+---
+ - hosts: all
+   gather_facts: no  
+   tasks: 
+    - name: i want to run command 
+      ios_command:
+       commands: 
+        - show int gig1
+        - show version
+        - sh ip int bri
+
+    - name: ping to google dns
+      ios_ping:
+       dest: 8.8.8.8
+
+    - name: i want to run command
+      ios_command:
+       commands: sh ip int bri
+      register: output
+
+
+    - name: showing normal output
+      debug:
+       msg: "my output of above command is {{output}}"
+
+    - name: execute me please
+      debug:
+       msg: "hello world this is me only please run me"
+      tags:
+       - anything
